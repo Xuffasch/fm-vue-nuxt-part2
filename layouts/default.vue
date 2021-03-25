@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <Nuxt />
-  </div>
+  <Nuxt />
 </template>
 
 <style>
 html {
   font-family:
-    'Source Sans Pro',
+    'Mulish',
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
@@ -15,6 +13,7 @@ html {
     'Helvetica Neue',
     Arial,
     sans-serif;
+  font-weight: 300;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -22,6 +21,19 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+    font-family:
+    'Poppins',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+    font-weight: 600;
 }
 
 *,
