@@ -1,6 +1,19 @@
 <template>
-  <Nuxt />
+  <div>
+    <div class="content">
+      <AppMenu />
+      <Nuxt />
+    </div>
+  </div>
 </template>
+
+<script>
+import AppMenu from '@/components/AppMenu.vue'
+export default {
+  components: { AppMenu }
+}
+
+</script>
 
 <style>
 html {
@@ -64,7 +77,8 @@ h1, h2, h3, h4 {
   color: #35495e;
   text-decoration: none;
   padding: 10px 30px;
-  margin-left: 15px;
+  margin-left: 15
+    AppMenupx;
 }
 
 .button--grey:hover {
