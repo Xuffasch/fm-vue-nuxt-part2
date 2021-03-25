@@ -3,6 +3,7 @@
     "javascript": "javascriptreact",
     "vue": "vue",
     "vue-html": "html",
+    "vue-script": "js",
     "js": "js"
   },
   "eslint.validate": [
