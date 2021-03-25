@@ -1,5 +1,10 @@
 {
   "emmet.includeLanguages": {
     "vue": "vue",
-  }
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+  ]
 }
