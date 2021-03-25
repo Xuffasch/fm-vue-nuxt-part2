@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>All About Nuxt Food</h1>
-  </div>
+  <footer>Nuxt Food App by Sarah Drasner Disciple</footer>
 </template>
 
 <script>

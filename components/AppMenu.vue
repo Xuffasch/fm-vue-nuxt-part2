@@ -7,8 +7,8 @@
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link exact to="/about">
-          About
+        <nuxt-link exact to="restaurants">
+          Restaurants
         </nuxt-link>
       </li>
     </ul>
