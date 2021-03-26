@@ -23,7 +23,6 @@ export const actions = {
       })
         .then(response => response.json())
         .then((data) => {
-          console.log(data)
           commit('updateFoodData', data)
         })
     } catch (err) {

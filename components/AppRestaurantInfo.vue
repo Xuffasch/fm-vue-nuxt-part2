@@ -1,13 +1,12 @@
 <template>
   <section class="restaurantinfo">
-    <div v-for="restaurant in fooddata" :key="restaurant.id">
+    <div v-for="restaurant in selected" :key="restaurant.id">
       <h2>{{ restaurant.name }}</h2>
       <p>Delivery Time : {{ restaurant.deliveryTime }}</p>
       <p>Rating : {{ restaurant.rating }}</p>
       <p v-if="restaurant.freeDelivery" class="label">
         <span>Free Delivery</span>
       </p>
-
       <div class="row">
         <div v-for="menuitem in restaurant.menu" :key="menuitem.id" class="items" :style="`background: url(${menuitem.img}) no-repeat  center center`">
           <div class="iteminfo">
@@ -28,6 +27,12 @@
 <script>
 import { mapState } from 'vuex'
 export default {
+  props: {
+    // eslint-disable-next-line vue/require-default-prop
+    selected: {
+      type: [Array, Object]
+    }
+  },
   computed: {
     ...mapState(['fooddata'])
   },
