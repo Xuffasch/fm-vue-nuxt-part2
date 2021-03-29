@@ -1,46 +1,44 @@
 <template>
-  <div>
-    <article class="menu-item">
-      <section
-        class="div1"
-        :style="`background: url(/${currentItem.img}) no-repeat center center`"
-      />
-      <section class="div2">
-        <h2>{{ currentItem.item }}</h2>
-        <p>{{ currentPrice(currentItem.price) }}</p>
-        <div class="quantity">
-          <input v-model="quantity" type="number">
-          <button>Add to Cart - {{ updatedPrice }}</button>
-        </div>
-      </section>
-      <section class="div4">
-        <h2>Description</h2>
-        <p>{{ currentItem.description }}</p>
-      </section>
-      <section class="div3">
+  <article class="menu-item">
+    <section
+      class="div1"
+      :style="`background: url(/${currentItem.img}) no-repeat center center`"
+    />
+    <section class="div2">
+      <h2>{{ currentItem.item }}</h2>
+      <p>Price: {{ currentPrice(currentItem.price) }}</p>
+      <div class="quantity">
+        <input v-model="quantity" type="number">
+        <button>Add to Cart - {{ updatedPrice }}</button>
+      </div>
+    </section>
+    <section class="div4">
+      <h2>Description</h2>
+      <p>{{ currentItem.description }}</p>
+    </section>
+    <section class="div3">
+      <div v-if="currentItem.options">
         <fieldset>
           <legend><h3>options</h3></legend>
-          <div v-if="currentItem.options">
-            <div v-for="(item, index) in currentItem.options" :key="index">
-              <input :id="item" type="checkbox">
-              <label :for="item">{{ item }}</label>
-              <br>
-            </div>
+          <div v-for="item in currentItem.options" :key="item">
+            <input :id="item" v-model="option" type="radio" name="option" :value="item">
+            <label :for="item">{{ item }}</label>
+            <br>
           </div>
         </fieldset>
+      </div>
+      <div v-if="currentItem.addOns">
         <fieldset>
           <legend><h3>add-ons</h3></legend>
-          <div v-if="currentItem.addOns">
-            <div v-for="(item, index) in currentItem.addOns" :key="index">
-              <input :id="item" type="checkbox">
-              <label :for="item">{{ item }}</label>
-              <br>
-            </div>
+          <div v-for="(item, index) in currentItem.addOns" :key="index">
+            <input :id="item" v-model="addons" :value="item" type="checkbox" name="addon">
+            <label :for="item">{{ item }}</label>
+            <br>
           </div>
         </fieldset>
-      </section>
-    </article>
-  </div>
+      </div>
+    </section>
+  </article>
 </template>
 
 <script>
@@ -50,7 +48,9 @@ export default {
   data () {
     return {
       id: this.$route.params.id,
-      quantity: 0
+      quantity: 0,
+      option: '',
+      addons: []
     }
   },
   computed: {
@@ -90,7 +90,7 @@ export default {
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-    width: 80%;
+    width: 1080px;
     margin: 5% auto;
   }
   .div1 { grid-area: 1 / 1 / 4 / 2; }
