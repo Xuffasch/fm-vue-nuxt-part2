@@ -8,7 +8,7 @@
         <span>Free Delivery</span>
       </p>
       <div class="row">
-        <div v-for="menuitem in restaurant.menu" :key="menuitem.id" class="items" :style="`background: url(${menuitem.img}) no-repeat  center center`">
+        <div v-for="menuitem in restaurant.menu" :key="menuitem.id" class="items" :style="`background: url(/${menuitem.img}) no-repeat  center center`">
           <div class="iteminfo">
             <div>
               <h4>{{ menuitem.item }}</h4>
