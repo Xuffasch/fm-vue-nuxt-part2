@@ -7,7 +7,8 @@
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link exact to="restaurants">
+        <!-- Do not forget '/' in links or the paths will be computed in relation to last visited path and leads to undefined data-->
+        <nuxt-link to="/restaurants">
           Restaurants
         </nuxt-link>
       </li>
